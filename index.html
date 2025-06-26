@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-item active" data-view="weather"><i class="fas fa-cloud-sun"></i><span>Weather</span></div>
+    <div class="sidebar-item" data-view="map"><i class="fas fa-map-marked-alt"></i><span>Map</span></div>
+    <div class="sidebar-item" data-view="settings"><i class="fas fa-cog"></i><span>Settings</span></div>
+    <button id="theme-toggle" class="sidebar-item" title="Toggle Theme">
+      <i class="fas fa-moon"></i><span>Theme</span>
+    </button>
+    <div id="recent-searches"></div>
+  </div>
+
+  <main class="main">
+    <form class="top-bar">
+      <input id="city-input" type="text" placeholder="Search city" />
+    </form>
+
+    <section class="weather-info card" id="weather-section">
+      <h1>City</h1>
+      <div class="weather-description">Description</div>
+      <h2>--°</h2>
+      <div class="temp-icon">🌡️</div>
+    </section>
+
+    <section class="forecast card">
+      <h3>Today's Forecast</h3>
+      <div class="forecast-hours"></div>
+    </section>
+
+    <section class="air-conditions card">
+      <div class="conditions-row">
+        <div id="real-feel">Real Feel: --°</div>
+        <div id="wind">Wind: -- km/h</div>
+      </div>
+      <div class="conditions-row">
+        <div id="pressure">Pressure: --</div>
+        <div id="uv-index">UV Index: --</div>
+      </div>
+      <button id="see-more" class="see-more">See more</button>
+    </section>
+
+    <section class="weekly card">
+      <h3>7-Day Forecast</h3>
+      <div class="weekly-days"></div>
+    </section>
+
+    <section class="map-section card" id="map-section" style="display:none;">
+      <h3>Map View</h3>
+      <img id="map-image" src="" alt="Map" style="width: 100%; border-radius: 10px;" />
+    </section>
+
+    <dialog id="details-modal">
+      <div class="modal-content">
+        <h2>More Details</h2>
+        <button id="close-modal">&times;</button>
+      </div>
+    </dialog>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
